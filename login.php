@@ -3,7 +3,8 @@
    */ --> 
 
    <?php get_header(); ?>
-   <div class="page-wrap">	
+ <div class="page-wrap">	
+ 
    <div id="login-container" class="login">
 				<form onsubmit="profile.php">
 					<div class="imgcontainer">
@@ -39,5 +40,5 @@
 				</form>
 				<a href="profile.html"><button>Sign Up</button></a>
 			</div>
-		</div>	
+		</div>	 -->
    <?php get_footer(); ?>

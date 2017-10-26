@@ -31,7 +31,7 @@
 				
 
 				<ul class="grid" id="lightSlider">
-					<?php $loop = new WP_Query( array( 'post_type' => 'videos', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+					<?php $loop = new WP_Query( array( 'post_type' => 'videos', 'orderby' => 'date', 'order' => 'ASC' ) ); ?>
 			        <?php while( $loop->have_posts() ) : $loop->the_post();?>
 			            <?php
 			          // Custom Fields variables
@@ -47,14 +47,14 @@
 					<div class="g-48">		
 			  			<img class="previewimg" src="<?php echo $thumbnail_image; ?>" >
 			  				<div class="ranking">
-			  					<h1><?php echo $genre; ?></h1>
+			  					<h1><?php echo get_the_id() - 108; ?></h1>
 			  				</div>
 						<div class="textbox">
 							<div class="slide">
 								<h2><?php echo $title; ?></h2>
 								<p><?php echo $username; ?><br>
 								Uploaded 23 hours ago<br>
-								<?php echo $category; ?> - <?php echo $genre; ?><br>
+								<?php echo $category; ?> - <?php echo the_category(' ') ?><br>
 								968,252 Views</p>
 							</div>
 						</div>

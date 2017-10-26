@@ -68,6 +68,7 @@
 		
 			<ul class="grid">
 			<div class="grid-sizer"></div>
+
 	      <!-- php loop begins  -->
 	      <?php $loop = new WP_Query( array( 'post_type' => 'videos', 'meta_key' => 'category', 'meta_value' => 'dream', 'orderby' => 'post_id', 'order' => 'ASC', 'posts_per_page' => -1 ) ); ?>
 	        <?php while( $loop->have_posts() ) : $loop->the_post();?>
@@ -78,6 +79,8 @@
 	         $category       = get_field('category');
 	         $genre          = get_field('genre');
 	         $thumbnail_image = get_field('thumbnail_image');
+
+	    
 	    ?>
 
 							  	<li class="g-24 grid-item <?php echo $genre; ?>" >	
@@ -88,7 +91,7 @@
 											<h2><?php echo $title; ?></h2>
 											<p><?php echo $username; ?><br>
 											Uploaded 23 hours ago<br>
-											<?php echo $category; ?> - <?php echo $genre; ?><br>
+											<?php echo the_category(' ') ?><br>
 											968,252 Views</p>
 										</div>
 									</div>

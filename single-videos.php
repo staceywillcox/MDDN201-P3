@@ -5,6 +5,7 @@
          $category       = get_field('category');
          $genre          = get_field('genre');
          $thumbnail_image = get_field('thumbnail_image');
+         $description = get_field('description');
 
 ?>
 
@@ -24,9 +25,11 @@
               <a href="http://localhost/201tutorial/profile-2/"><img id="profile" src="http://localhost/201tutorial/wp-content/uploads/2017/10/profiledark.png"></a>
               <a href="http://localhost/201tutorial/profile-2/"><p><?php echo $username; ?></a></br>
               Uploaded 23 hours ago</br>
-              <b><?php echo $category; ?> - <?php echo $genre; ?></b></p>
+              <b><?php echo $category; ?> - <?php echo the_category(' ') ?></b></p>
               <a href="http://localhost/201tutorial/vr/"><img id="vrbutton" src="http://localhost/201tutorial/wp-content/uploads/2017/10/vrdark.png"></a>
               </br>
+              <p><?php if(function_exists('the_views')) { echo the_views(); } ?></p>
+              <p><?php echo $description; ?></p>
           </div>
         </div>
       </section>

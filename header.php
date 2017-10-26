@@ -31,7 +31,7 @@
 			</div>
 	
 			<div class="dropdown">
-				<a href=" http://localhost/201tutorial/upload-2/">
+				<a href=" http://localhost/201tutorial/upload-3/">
 					<button class="dropbtn">
 					<img class="navlogo" src="http://localhost/201tutorial/wp-content/uploads/2017/10/uploadgrey.png"><img class="hovercolour" src="http://localhost/201tutorial/wp-content/uploads/2017/10/uploaddark.png"></br><p>Upload</p>
 					</button>
@@ -46,7 +46,9 @@
 				</a>
 			</div>
 
-			<div id="search">
-				<input type="text" name="search" placeholder="Search">
-			</div>
+			<!-- <div id="search"> -->
+			<div class="header-search"><?php get_search_form(); ?></div>
+
+				<!-- <input type="text" name="search" placeholder="Search"> -->
+			<!-- </div> -->
 		</div>

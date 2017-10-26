@@ -38,7 +38,13 @@
 			</ul>
 		</div>
 		<!-- MENU END -->
+<?php
+$date1 = strtotime('<?php echo the_time("Y F j g:i"); ?>');
+$date2 = strtotime(date('Y-m-d H:i'));
+$seconds_diff = $date2 - $date1;
+date_default_timezone_set('Pacific/Auckland');
 
+?>
 		<!-- UPLOADS -->
 		<div id="myuploads">
 			<div class="g-65">
@@ -56,14 +62,16 @@
 							    $thumbnail_image = get_field('thumbnail_image');
 							     
 						   	?>
+
+
 					<li class="thumbnail grid-item <?php echo $genre; ?>">
 						<a href="preview.html">		
 						  	<img class="previewimg" src="<?php echo $thumbnail_image; ?>" >
 						  	<div class="thumbnailtext">
 								<h2><?php echo $title; ?></h2>
 								<p><?php echo $username; ?><br>
-								<?php the_time('d/m/Y'); ?><br>
-								<?php echo $category; ?> - <?php echo $genre; ?><br>
+								<?php echo get_the_time("g:i a"); ?><br>
+								<?php echo $category; ?> - <?php echo the_category(' ') ?><br>
 								522,003 Views</p>
 							</div>
 						</a>
@@ -99,7 +107,7 @@
 								<h2><?php echo $title; ?></h2>
 								<p><?php echo $username; ?><br>
 								Uploaded 5 days ago<br>
-								<?php echo $category; ?> - <?php echo $genre; ?><br>
+								<?php echo $category; ?> - <?php echo the_category(' ') ?><br>
 								522,003 Views</p>
 							</div>
 						</a>
@@ -134,7 +142,7 @@
 								<h2><?php echo $title; ?></h2>
 								<p><?php echo $username; ?><br>
 								Uploaded 5 days ago<br>
-								<?php echo $category; ?> - <?php echo $genre; ?><br>
+								<?php echo $category; ?> - <?php echo the_category(' ') ?><br>
 								522,003 Views</p>
 							</div>
 						</a>

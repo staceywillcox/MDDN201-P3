@@ -56,7 +56,7 @@
 											<h2><?php echo $title; ?></h2>
 											<p><?php echo $username; ?><br>
 											Uploaded 23 hours ago<br>
-											<?php echo $category; ?> - <?php echo $genre; ?><br>
+											Nightmare - <?php echo the_category(' ') ?><br>
 											968,252 Views</p>
 										</div>
 									</div>
