@@ -154,6 +154,11 @@ h3 {
 	
  }
 
+ .vidbio{
+ 	margin-top:5%;
+ 	margin-bottom: 5%;
+ }
+
 #profile{
 	width:40px;
 	float:left;
@@ -190,7 +195,6 @@ opacity:0.8;
 }
 
 #vrpage{
-	background-image: url("images/spongebob.jpg");
 	background-repeat: no-repeat;
 	background-size:cover;
 }
@@ -257,7 +261,6 @@ opacity:0.8;
 	overflow: auto;
 	margin-right:15%;
 	margin-top:1.5%;
-	margin-bottom: 90px;
 	width:70%;
 	position: relative;
 	}
@@ -599,21 +602,7 @@ input:checked + .slider:before {
 	display: none;
 }
 
-#myuploads{
-	display: block;
-}
 
-#history{
-	display: none;
-}
-
-#settings{
-	display: none;
-}
-
-#favourites{
-	display: none;
-}
 
 .ranking{
 	position: absolute;
@@ -794,14 +783,23 @@ img.avatar{
 }
 
 /*UPLOAD*/
-.usp-submit{
+.upload{
+	width: 50%;
+	height:50%;
+	background-color: white;
+	margin:2%;
+	display: inline-block;
+	position: relative;
+	float: left;
+}	
+
+
+#clickupload{
 	width:250px;
 	height: 60px;
-	background-color:#9BC4E2;
-	color: white;
+	background-color:rgba(155, 196, 226, 0.1);
 	display: block;
-	margin:0 auto;
-	content:'Upload' !important;
+	margin:150px auto;
 
 }
 #clickupload p{
@@ -810,33 +808,23 @@ img.avatar{
 	margin:0;
 }
 
-#user-submitted-posts{
+#uploadform{
 	margin-top: 2%;
 	width:45%;
-	margin:0 auto;
+	float:left;
+	overflow: hidden;
 
 }
 
-#user-submitted-posts fieldset{
-	margin-bottom: 20px !important;
-
-}
-
-#user-submitted-posts fieldset label{
-	font-weight: bold;
-	padding-bottom: 5px !important;
-
-}
-
-#user-submitted-posts input[type=text] {
-	width:100% !important;
+#uploadform input[type=text] {
+	width:100%;
 	padding:10px 0px 10px 10px ;
 	margin-bottom: 5px;
 	border:none;
 
 }
 
-#user-submitted-posts select{
+#uploadform select{
 	width:100%;
 	padding:10px 0px 10px 10px ;
 	margin-bottom: 5px;
@@ -872,17 +860,19 @@ img.avatar{
 	width:100%;
 }
 
-#previewpageinfo{
+.previewpageinfo{
 	float:left;
 	display: inline-block;
 	width:100%;
-
 }
-#previewpageinfo p {
+
+.previewpageinfo p {
 	font-size: 0.8em;
 	float: left;
 	margin-top: 0;
 }
+
+
 
 /*For small screen only*/ 
 @media only screen and (min-width: 320px) and (max-width: 1000px), (orientation: portrait){

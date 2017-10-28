@@ -191,3 +191,7 @@ function login() {
             $('.grid').isotope({filter: '.transport'});
         });
 
+
+function goBack() {
+    window.history.back();
+}

@@ -47,21 +47,21 @@
 	         $genre          = get_field('genre');
 	         $thumbnail_image = get_field('thumbnail_image');
 	    ?>
-
+							<a href="<?php the_permalink() ?>">	
 							  	<li class="g-24 grid-item <?php echo $genre; ?>" >	
-							  	<a href="<?php the_permalink() ?>">	
 							  		<img class="previewimg" src="<?php echo $thumbnail_image; ?>" >
 									<div class="textbox">
 										<div class="slide">
 											<h2><?php echo $title; ?></h2>
-											<p><?php echo $username; ?><br>
-											Uploaded 23 hours ago<br>
+											<p><?php  global $current_user;
+      										get_currentuserinfo(); echo $current_user->user_login . "\n"; ?><br>
+											<?php echo get_the_date(); ?><br>
 											Nightmare - <?php echo the_category(' ') ?><br>
-											968,252 Views</p>
+											 <?php if(function_exists('the_views')) { the_views(); } ?></p>
 										</div>
 									</div>
-								</a>
 								</li>
+							</a>	
 
 	      <?php endwhile; ?>
 

@@ -1,109 +1,39 @@
 <!--    /** 
    Template Name: Upload
    */ --> 
-<?php
+<?php get_header(); ?>
  
 
  
-function ty_save_post_data() {
- 
-if ( empty($_POST) || !wp_verify_nonce($_POST['name_of_nonce_field'],'name_of_my_action') )
-{
-print 'Sorry, your nonce did not verify.';
-exit;
- 
-}else{
- 
-// Do some minor form validation to make sure there is content
-if (isset ($_POST['title'])) {
-$title =  $_POST['title'];
-} else {
-echo 'Please enter a title';
-exit;
-}
-if (isset ($_POST['description'])) {
-$description = $_POST['description'];
-} else {
-echo 'Please enter the content';
-exit;
-}
- 
-if(isset($_POST['post_tags'])){
-$tags = $_POST['post_tags'];
-}else{
-$tags = "";
-}
- 
-// Add the content of the form to $post as an array
-$post = array(
-'post_title' => wp_strip_all_tags( $title ),
-'post_content' => $description,
-'post_category' => $_POST['cat'],  // Usable for custom taxonomies too
-'tags_input' => $tags,
-'post_status' => 'publish',            // Choose: publish, preview, future, etc.
-'post_type' => 'videos'  // Use a custom post type if you want to
-);
-wp_insert_post($post);  // http://codex.wordpress.org/Function_Reference/wp_insert_post
- 
-$location = home_url(); // redirect location, should be login page
- 
-echo "<meta http-equiv='refresh' content='0;url=$location' />"; exit;
-} // end IF
- 
-}
-
- 
-
-?>
-
-
-   <?php get_header(); ?>
-
 			<div class="page-wrap">
 				<div class="center">
-				</?php
-					function ty_front_end_form() {
-				 ?>
-				<form id="custom-post-type" name="custom-post-type" method="post" action="">
-				 
-				<p><label for="title">Post Title</label><br />
-				 
-				<input type="text" id="title" value="" tabindex="1" size="20" name="title" />
-				 
-				</p>
-				 
-				<p><label for="description">Post Description</label><br />
-				 
-				<textarea id="description" tabindex="3" name="description" cols="50" rows="6"></textarea>
-				 
-				</p>
-				 
-				<p><?php wp_dropdown_categories( 'show_option_none=Category&tab_index=4&taxonomy=category' ); ?></p>
-				 
-				<p><label for="post_tags">Post Tags</label>
-				 
-				<input type="text" value="" tabindex="5" size="16" name="post-tags" id="post-tags" /></p>
-				 
-				<p align="right"><input type="submit" value="Publish" tabindex="6" id="submit" name="submit" /></p>
-				 
-				<input type="hidden" name="post-type" id="post-type" value="custom_posts" />
-				 
-				<input type="hidden" name="action" value="custom_posts" />
-				 
-				<?php wp_nonce_field( 'name_of_my_action','name_of_nonce_field' ); ?>
-				 
-				</form>
-				<?php
-				 
-				if($_POST){
-				ty_save_post_data();
-				}
-				 
+					<div class="upload">
+						<div id="clickupload">
+							<p>Click to browse your files.</p>
+						</div>
+					</div>
+					<form id="uploadform">
+						<input type="text" placeholder="Title">
+						<input type="text" placeholder="Description">
+						<select name="catagory" placeholder="Catagory">
+							<option value="everyone" disabled selection>Catagory</option>
+							<option value="dream">Dream</option>
+							<option value="nightmare">Nightmare</option>
+						</select>
+						<input type="text" placeholder="Genre">
+						<select name="privacy">
+						
+							<option value="everyone" disabled selection>Who can see this upload?</option>
+							<option value="everyone">Everyone</option>
+							<option value="nightmare">Only people who have the link</option>
+							<option value="everyone">No one, this is a private upload</option>
+						</select>
+						<input type="text" placeholder="Tags  eg. Skiiing, Extreme, Sports, Snow">
+						<button>Upload</button>
 
-				add_shortcode('custom-post','ty_front_end_form');
-				?>
-				</div>
-			</div>	
+					</form>
+					</div>
+				</div>	
 
 
    <?php get_footer(); ?>
