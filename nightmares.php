@@ -49,9 +49,9 @@
 	    ?>
 							<a href="<?php the_permalink() ?>">	
 							  	<li class="g-24 grid-item <?php echo $genre; ?>" >	
-							  		<img class="previewimg" src="<?php echo $thumbnail_image; ?>" >
-									<div class="textbox">
-										<div class="slide">
+							  		<img class="previewimg gap" src="<?php echo $thumbnail_image; ?>" >
+									<div class="textbox gap">
+										<div class="slide gap">
 											<h2><?php echo $title; ?></h2>
 											<p><?php  global $current_user;
       										get_currentuserinfo(); echo $current_user->user_login . "\n"; ?><br>
