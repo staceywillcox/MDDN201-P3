@@ -21,8 +21,8 @@
 							<a href=" http://localhost/201tutorial/profile-2/"><img id="profile" src="http://localhost/201tutorial/wp-content/uploads/2017/10/profiledark.png"></a>
 							<a href=" http://localhost/201tutorial/profile/"><p><?php  global $current_user;
       										get_currentuserinfo(); echo $current_user->user_login . "\n"; ?></a></br>
-							Uploaded 23 hours ago</br>
-							<?php echo get_the_date(); ?></p>
+							<?php echo get_the_date(); ?></br>
+							5,000 Views </br></p>
 							 <a href="http://localhost/201tutorial/vr-2/"><img id="vrbutton" src="http://localhost/201tutorial/wp-content/uploads/2017/10/vrdark.png"></a>
 
 							</br>

@@ -17,10 +17,11 @@
 				<div class="textbox">
 				<div class="slide">
 					<h2><?php echo $title; ?></h2>
-					<p><?php echo $username; ?><br>
-					Uploaded 23 hours ago<br>
+					<p><?php  global $current_user;
+      								get_currentuserinfo(); echo $current_user->user_login . "\n"; ?><br>
+					<?php echo get_the_date(); ?><br>
 					<?php echo the_category(' ') ?><br>
-					968,252 Views</p>
+					 <?php if(function_exists('the_views')) { the_views(); } ?></p>
 				</div>
 				</div>
 			</a>
