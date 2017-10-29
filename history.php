@@ -12,8 +12,7 @@
 		<div class="g-20">
 			<div class="smallprofile">
 				<img id="profileavatar" src="http://localhost/201tutorial/wp-content/uploads/2017/10/profiledark.png">
-				<h4><?php  global $current_user;
-      										get_currentuserinfo(); echo $current_user->user_login . "\n"; ?></h4>
+				<h4><?php  global $current_user; get_currentuserinfo(); echo $current_user->user_login . "\n"; ?></h4>
 			</div>
 			<ul>
 				<a href="http://localhost/201tutorial/profile-2/">
@@ -39,13 +38,13 @@
 			</ul>
 		</div>
 		<!-- MENU END -->
-<?php
-$date1 = strtotime('<?php echo the_time("Y F j g:i"); ?>');
-$date2 = strtotime(date('Y-m-d H:i'));
-$seconds_diff = $date2 - $date1;
-date_default_timezone_set('Pacific/Auckland');
+		<?php
+		$date1 = strtotime('<?php echo the_time("Y F j g:i"); ?>');
+		$date2 = strtotime(date('Y-m-d H:i'));
+		$seconds_diff = $date2 - $date1;
+		date_default_timezone_set('Pacific/Auckland');
 
-?>
+		?>
 		
 
 		<!-- HISTORY STARTS -->
@@ -84,7 +83,6 @@ date_default_timezone_set('Pacific/Auckland');
 			</div>
 		</div>
 		<!-- HISTORY END -->
-
 	</div>		
 	<!-- MAIN CENTER CONTENT ENDS -->
 

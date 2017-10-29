@@ -82,6 +82,39 @@ date_default_timezone_set('Pacific/Auckland');
 						<?php endwhile; ?>
 	          		<?php wp_reset_postdata(); // reset the query ?>
 				</ul>	
+				
+				<h3>Uploaded Nightmares</h3>
+				<ul class="grid">
+					<?php $loop = new WP_Query( array( 'post_type' => 'videos', 'meta_key' => 'category', 'meta_value' => 'nightmare', 'orderby' => 'post_id', 'order' => 'ASC', 'posts_per_page' => -1 ) ); ?>
+						<?php while( $loop->have_posts() ) : $loop->the_post();?>
+						    <?php
+						    // Custom Fields variables
+							    $title          = get_field('title');
+							    $username       = get_field('username');
+							    $category       = get_field('category');
+							    $genre          = get_field('genre');
+							    $thumbnail_image = get_field('thumbnail_image');
+							     
+						   	?>
+
+
+					<li class="thumbnail grid-item <?php echo $genre; ?>">
+						<a href="<?php the_permalink(); ?>">		
+						  	<img class="previewimg" src="<?php echo $thumbnail_image; ?>" >
+						  	<div class="thumbnailtext">
+								<h2><?php echo $title; ?></h2>
+								<p><?php  global $current_user;
+      										get_currentuserinfo(); echo $current_user->user_login . "\n"; ?><br>
+								<?php echo get_the_time("g:i a"); ?><br>
+								<?php echo $category; ?> - <?php echo the_category(' ') ?><br>
+								522,003 Views</p>
+							</div>
+						</a>
+					</li>
+								
+						<?php endwhile; ?>
+	          		<?php wp_reset_postdata(); // reset the query ?>
+				</ul>	
 			</div>
 		</div>
 		<!-- UPLOADS END -->

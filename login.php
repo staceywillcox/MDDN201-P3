@@ -2,7 +2,7 @@
    Template Name: Login 
    */ --> 
 
-   <?php get_header(); ?>
+<?php get_header(); ?>
  <div class="page-wrap">	
  
    <div id="login-container" class="login">

@@ -11,19 +11,18 @@
 
 
     <!-- Posts Area -->
-	  	<li class="g-24 grid-item <?php echo $genre; ?>" >	
-		<a href="<?php the_permalink() ?>">	
+<li class="g-24 grid-item <?php echo $genre; ?>" >	
+	<a href="<?php the_permalink() ?>">	
 		<img class="previewimg" src="<?php echo $thumbnail_image; ?>" >
-				<div class="textbox">
-				<div class="slide">
-					<h2><?php echo $title; ?></h2>
-					<p><?php  global $current_user;
-      								get_currentuserinfo(); echo $current_user->user_login . "\n"; ?><br>
+		<div class="textbox">
+			<div class="slide">
+				<h2><?php echo $title; ?></h2>
+				<p><?php  global $current_user; get_currentuserinfo(); echo $current_user->user_login . "\n"; ?><br>
 					<?php echo get_the_date(); ?><br>
 					<?php echo the_category(' ') ?><br>
-					 <?php if(function_exists('the_views')) { the_views(); } ?></p>
-				</div>
-				</div>
-			</a>
-		</li>
+					<?php if(function_exists('the_views')) { the_views(); } ?></p>
+			</div>
+		</div>
+	</a>
+</li>
 		

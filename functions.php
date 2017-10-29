@@ -12,7 +12,7 @@ function sod_scripts() {
 
 	wp_enqueue_script('remcastjquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '3', true);
 
-wp_enqueue_script('remcast-isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.js', array(), '3', true);
+	wp_enqueue_script('remcast-isotope', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.js', array(), '3', true);
 
 
 	// wp_enqueue_script( 'remcast-isotope', get_template_directory_uri() . '/js/isotope.js', array(), '20151215', true );

@@ -2,9 +2,7 @@
    Template Name: Upload
    */ --> 
 <?php get_header(); ?>
- 
 
- 
 			<div class="page-wrap">
 				<div class="center">
 					<div class="upload">

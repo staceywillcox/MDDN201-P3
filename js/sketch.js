@@ -192,6 +192,4 @@ function login() {
         });
 
 
-function goBack() {
-    window.history.back();
-}
+
